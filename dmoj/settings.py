@@ -452,17 +452,11 @@ ACCOUNT_ACTIVATION_DAYS = 7
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'judge.utils.pwned.PwnedPasswordsValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+         'OPTIONS': {
+            'min_length': 4,  # Đặt độ dài tối thiểu là 12 ký tự
+        }
+    }
 ]
 
 SILENCED_SYSTEM_CHECKS = ['urls.W002', 'fields.W342']
